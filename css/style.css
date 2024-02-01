@@ -286,6 +286,61 @@
     border: 1px #CCC solid;
 }
 
+/* Hàng Hóa */
+
+.formhanghoa table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px #999 solid;
+}
+
+.formhanghoa table th:nth-child(1){
+    width: 5%;
+    padding: 20px;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(2){
+    width: 5%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(3){
+    width: 20%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(4){
+    width: 10%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(5){
+    width: 15%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(6){
+    width: 10%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(7){
+    width: 15%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(8){
+    width: 5%;
+    background-color: #CCC;
+}
+.formhanghoa table th:nth-child(9){
+    width: 10%;
+    background-color: #CCC;
+}
+
+.formhanghoa table td{
+    padding: 10px 20px;
+    border: 1px #CCC solid;
+}
+
+.formhanghoa table td img{
+    width: 150px;
+}
+
 
 
 
