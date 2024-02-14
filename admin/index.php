@@ -16,16 +16,36 @@
                 include "danhmuc/add.php";
                 break;
             case 'listdm':
-                $sql = "SELECT * FROM loai ORDER BY ma_loai ASC";//ASC LÀ SẮP XẾP TĂNG DẦN
+                $sql = "SELECT * FROM loai ORDER BY ma_loai ASC";//ASC LÀ SẮP XẾP TĂNG DẦN //DESC là dữ liệu mới được thêm vào bảng
                 $listdanhmuc = pdo_query($sql);
                 include "danhmuc/list.php";
                 break;
             case 'xoadm':
-                if(isset($_GET['id'])&&($_GET['id']>0)){
+                if(isset($_GET['id'])&&($_GET['id']>0)){    //kiểm tra xem id có tồn tại hay không và có lớn hơn 0 hay không
                     $sql = "DELETE FROM loai WHERE ma_loai=".$_GET['id'];
                     pdo_execute($sql);
                 };
-                $sql = "SELECT * FROM loai ORDER BY ma_loai ASC";//ASC LÀ SẮP XẾP TĂNG DẦN
+                $sql = "SELECT * FROM loai ORDER BY ma_loai ASC";//ASC LÀ SẮP XẾP TĂNG DẦN //DESC là dữ liệu mới được thêm vào bảng
+                $listdanhmuc = pdo_query($sql);
+                include "danhmuc/list.php";
+                break;
+            case 'suadm':
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    $sql="SELECT * FROM loai WHERE ma_loai=".$_GET['id'];
+                    $dmuc = pdo_query_one($sql);
+                }
+                include "danhmuc/update.php";
+                break;
+            case 'updatedm':
+                if(isset($_POST['capnhat'])&&($_POST['capnhat'])){ //kiểm tra tồn tại và có được click hay không
+                    $ten_loai = $_POST['ten_loai'];
+                    $ma_loai = $_POST['ma_loai'];
+                    $sql = "UPDATE loai SET ten_loai='$ten_loai' WHERE ma_loai='$ma_loai'";
+                    pdo_execute($sql);
+                    $messeger = "Cập nhật thành công";
+                }
+
+                $sql = "SELECT * FROM loai ORDER BY ma_loai ASC";//ASC LÀ SẮP XẾP TĂNG DẦN //DESC là dữ liệu mới được thêm vào bảng
                 $listdanhmuc = pdo_query($sql);
                 include "danhmuc/list.php";
                 break;
